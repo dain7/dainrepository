@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap');
+
+  html, body{
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+  }
+
+  body {
+
+  		background-image: url('../static/pattern.jpeg')
+  }
+
+ /* div.one, div.two, div.three {
+
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    margin: 10px;
+    padding: 30px;
+  } */
+
+
+   .img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.img {
+    width: 550px;
+    height: 100%;
+    /* background-color: #ff6699; */
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 2px 2px 5px #fff;
+    position: absolute;
+    text-align: center;
+    left:50%;
+    transform:translateX(-50%)
+  }
+
+   div.one, div.two, div.three {
+    width: 530px;
+    height: 100%;
+   /* background-color: #ff6699; */
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 2px 2px 5px #fff
+  }
+
+
+  .one {
+    background-color: #ff6699;
+    /* transform: rotate(10deg); */
+  }
+
+  .two {
+    background-color: #333399;
+    /* transform: rotate(-10deg); */
+  }
+
+  .three {
+    background-color: #ff6699;
+    /* transform: rotate(10deg); */
+  }
+
+
+
+
+  div.one:hover {
+    transform:scale(1.2,1.2);
+  }
+
+  div.two:hover {
+    transform:scale(1.2,1.2);
+  }
+
+  div.three:hover {
+    transform:scale(1.2,1.2);
+  }
+
+
+  p {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+  }
+
+  .title h2 {
+    color: #ff3399;
+    font-family: 'Kirang Haerang', cursive;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 4px 4px 0px #1565C0, 8px 8px 0px #42A5F5, 12px 12px 0px #E3F2FD;
+    text-align: center;
+  }
+
+  #tape1{
+    z-index: 1;
+    position:absolute;
+    top: 250px;
+    left: 370px;
+    width: 120px;
+    height: 80px;
+    transform: rotate(-20deg);
+  }
+
+  #tape2{
+    z-index: 1;
+    position:absolute;
+    top: 340px;
+    right: 290px;
+    width: 200px;
+    height: 60px;
+    transform: rotate(55deg);
+  }
+
+  #sticker1 {
+    position: fixed;
+    z-index: 1;
+    top:300px;
+    left:100;
+    transform: rotate(40deg);
+  }
+
+  #sticker2 {
+    position: fixed;
+    z-index: 1;
+    top:170px;
+    right:50px;
+    transform: rotate(40deg);
+  }
+
+  #sticker3 {
+    position: fixed;
+    z-index: 2;
+    top:150px;
+    left:200px;
+    transform: rotate(-50deg);
+    height: 120px;
+    width: 150px;
+  }
+
+  #sticker4 {
+    position: fixed;
+    z-index: 1;
+    top:80px;
+    right:70px;
+
+    height: 150px;
+    width: 200px;
+  }
+
+  #sticker6 {
+    position: fixed;
+    z-index: 1;
+    top:0px;
+    left:40px;
+    transform: rotate(-40deg);
+  }
+
+  .again {
+    font-family: 'Kirang Haerang', cursive;
+  }
+
+  </style>
+
+
+</head>
+
+<script LAUNGUAGE='JAVASCRIPT'>
+function like(){
+  alert("좋아요!!");
+}
+
+function dislike(){
+  var result = confirm("정말 싫어요를 누르시겠어요?");
+
+  if(result)
+  {
+    alert("ㅠㅠ")
+  }
+  else{
+    alert("좋아요를 누르셨습니다!")
+  }
+  alert("싫어요를 클릭하셨습니다.");
+}
+</script>
+
+
+
+<body>
+
+<br />
+<br />
+
+
+<header>
+  <div class="title">
+  <h2> 다음과 같이 찍어보세요! </h2>
+  </div>
+</header>
+
+
+
+<br>
+<br>
+
+
+
+<div class="one">
+  <br>
+  <br>
+  <p>
+    First Picture
+  </p>
+  {% for i in list1 %}
+  <img src="{{ i }}" alt="User Image" width=250px, height=300px>
+  {% endfor %}
+  <br />
+  <br />
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<form>
+  <img src='../static/like.png' onclick='like();return false;' width=30px, height=30px style="cursor: pointer"> &nbsp;
+  <img src='../static/dislike.png' onclick='dislike();return false;' width=30px, height=30px style="cursor: pointer">
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+<div class="two">
+  <br><br>
+  <p>
+    Second Picture
+  </p>
+  {% for i in list2 %}
+  <img src="{{ i }}" alt="User Image" width=250px, height=300px>
+  {% endfor %}
+  <br />
+  <br>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<form>
+  <img src='../static/like.png' onclick='like();return false;' width=30px, height=30px style="cursor: pointer"> &nbsp;
+  <img src='../static/dislike.png' onclick='dislike();return false;' width=30px, height=30px style="cursor: pointer">
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="three">
+  <br><br>
+  <p>
+  Third Picture
+  </p>
+  {% for i in list3 %}
+  <img src="{{ i }}" alt="User Image" width=250px, height=300px>
+  {% endfor %}
+  <br>
+  <br>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<form>
+  <img src='../static/like.png' onclick='like();return false;' width=30px, height=30px style="cursor: pointer"> &nbsp;
+  <img src='../static/dislike.png' onclick='dislike();return false;' width=30px, height=30px style="cursor: pointer">
+</form>
+<br />
+<br />
+<br />
+<br />
+
+</div>
+
+</body>
+</html>

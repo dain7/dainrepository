@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+  body {
+    background: url('../static/sky.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  /* img {
+    max-width: 100%;
+    height: auto;
+  } */
+
+  .wrapper {
+    width: 100%;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .polaroid {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 2px gray;
+  }
+
+  .caption {
+    text-align: center;
+    line-height: 2em;
+    font-family: 'Gaegu', cursive;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .item1 {
+    display: inline-block;
+    margin-top: 2rem;
+    position: absolute;
+    top: 200px;
+    left: 90px;
+    filter: grayscale(50%);
+    transform: rotate(-10deg);
+  }
+
+  .item2 {
+    display: inline-block;
+    margin-top: 2rem;
+    position: absolute;
+    top: 160px;
+    left: 370px;
+    filter: grayscale(50%);
+    transform: rotate(10deg);
+  }
+
+  .item3 {
+    display: inline-block;
+    margin-top: 2rem;
+    position: absolute;
+    top: 220px;
+    right: 380px;
+    filter: grayscale(50%);
+    transform: rotate(-10deg);
+  }
+
+  .item4 {
+    display: inline-block;
+    margin-top: 2rem;
+    position: absolute;
+    top: 200px;
+    right: 100px;
+    filter: grayscale(50%);
+    transform: rotate(10deg);
+  }
+
+  .tape1 {
+    z-index: 1;
+    position: absolute;
+    top: 210px;
+    left: 120px;
+    width: 100px;
+    height: 50px;
+    transform: rotate(55deg);
+  }
+
+  .tape2 {
+    z-index: 1;
+    position: absolute;
+    top: 180px;
+    left: 460px;
+    width: 100px;
+    height: 50px;
+    transform: rotate(-55deg);
+  }
+
+  .tape3 {
+    z-index: 1;
+    position: absolute;
+    top: 230px;
+    right: 470px;
+    width: 100px;
+    height: 50px;
+    transform: rotate(55deg);
+  }
+
+  .tape4 {
+    z-index: 1;
+    position: absolute;
+    top: 220px;
+    right: 130px;
+    width: 100px;
+    height: 50px;
+    transform: rotate(-80deg);
+  }
+
+
+  /* .place {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .place div {
+    width: 1100px;
+    margin: 0px 20px;
+    text-align: center;
+  }
+ */
+
+
+
+ #폰트
+
+ @font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.neon {
+  font-family: 'Fredoka One', cursive;
+  color: #FB4264;
+  font-size: 7vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #F40A35;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+
+  </style>
+
+
+  <title>PLACE</title>
+</head>
+
+<body>
+<br>
+
+
+
+
+<div class="container">
+  <div class="neon">PHOTO</div>
+</div>
+
+  <div class="wrapper">
+
+    <div class="item1">
+      <div class="polaroid">
+      <img src="{{ list1[0][2] }}" alt="User Image">
+      <div class="caption"> {{ list1[0][0]}} <br>
+       {{ list1[0][1] }} </div>
+    </div>
+  </div>
+    <br />
+
+    <div class="item2">
+      <div class="polaroid">
+      <img src="{{ list1[1][2] }}" alt="User Image">
+      <div class="caption"> {{ list1[1][0]}} <br>
+      {{ list1[1][1] }} </div>
+    </div>
+  </div>
+    <br />
+
+    <div class="item3">
+      <div class="polaroid">
+      <img src="{{ list1[2][2] }}" alt="User Image">
+      <div class="caption"> {{ list1[2][0]}} <br>
+      {{ list1[2][1] }} </div>
+    </div>
+  </div>
+
+  <div class="item4">
+    <div class="polaroid">
+    <img src="{{ list1[3][2] }}" alt="User Image">
+    <div class="caption"> {{ list1[3][0]}} <br>
+    {{ list1[3][1] }} </div>
+  </div>
+</div>
+
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+ </div>
+
+ <img class="tape1" src="../static/tape2.png" alt="">
+ <img class="tape2" src="../static/tape3.png" alt="">
+ <img class="tape3" src="../static/tape4.png" alt="">
+ <img class="tape4" src="../static/tape3.png" alt="">
+
+
+</body>
+</html>

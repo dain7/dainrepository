@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+
+		<title>Photo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/main.css" />
+	</head>
+
+
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="inner">
+					<h1>사진</h1>
+					<p>So many men, so many mind. made by <a href="http://instagram.com/aboutdain"> dain </a></p>
+				</div>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<!-- <span class="icon fa-diamond major"></span> -->
+						<img id='cameraimg' src="../static/camera.jpg" alt="">
+						<h2>Search Best Pose!</h2>
+						<form action='http://localhost:5000/result1' method="post">
+		         <h3> 사진 찍는 인원을 선택해주세요. </h3> <br>
+		        <select name='number'>
+		          <option value="solo"> 1명 </option>
+		          <option value="two">2명</option>
+		          <option value="three">3명</option>
+		          <option value="group">4명 이상</option>
+		          <option value="">선택안함</option>
+						</select><br>
+
+		         <h3> 사진찍는 사람과의 관계를 선택해주세요. </h3> <br>
+		         <select name='concept'>
+		           <option value="friendship"> 친구 </option>
+		           <option value="couple"> 연인 </option>
+		           <option value="family"> 가족 </option>
+		           <option value="">선택안함</option>
+		         </select><br>
+
+		         <h3> 어느 장소에서 찍는지 선택해주세요. </h3> <br>
+		         <select name="place">
+		           <option value="city"> 도시 </option>
+		           <option value="house"> 집 </option>
+		           <option value="nature"> 자연 </option>
+		           <option value="">선택안함</option>
+		         </select><br>
+		         <input type="submit" value="포즈보기"/><br>
+					 </form>
+					</section>
+
+
+					<section id="intro2" class="main2" >
+						<form action='http://localhost:5000/result2' method="post">
+
+							<img id='placeimg' src="../static/place.png" alt="">
+						  <h2> Search Best Place For Picture! </h2>
+						  <h3> 갈 지역을 선택해주세요. </h3>
+
+							<select name="area">
+								<option value="서울"> 서울 </option>
+								<option value="경기"> 경기 </option>
+								<option value="부산"> 부산 </option>
+						  </select><br>
+
+						 <h3> 원하는 장소를 선택해주세요. (ex.공원, 호수) </h3>
+							 <input type="text" name="search" /><br>
+							 <input type="submit" value="명소 찾기"/><br>
+
+					  </form>
+					</section>
+
+					<section id="intro3" class="main3">
+						<h2> Make a Character </h2>
+						<form method="post" action="http://localhost:5000/result3" enctype="multipart/form-data">
+								<p>
+									<input type="file" name="file" autocomplete="off" required>
+								</p>
+						    <p>
+								<input type="submit" value="Submit">
+							</p>
+						</form>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; copyright - Dain Kim</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../js/jquery.min.js"></script>
+			<script src="../js/skel.min.js"></script>
+			<script src="../js/util.js"></script>
+			<script src="../js/main.js"></script>
+
+	</body>
+</html>

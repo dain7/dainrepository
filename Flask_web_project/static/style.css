@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+
+#header {
+  background-color: #444;
+  color: rgba(255, 255, 255, 0.75);
+  background-image: url("../images/bear.jpg");
+  padding: 8em 0 6em 0;
+  background-size: cover;
+  background-position:  center;
+  background-attachment: fixed;
+  text-align: center;
+  position: relative;
+  cursor: default;
+}
+
+#header h1 {
+  margin-bottom: 0.5em;
+}
+
+#header .inner {
+  position: relative;
+  z-index: 1;
+}
+
+#header.alt{
+  height: 20em;
+  min-height: 20em;
+  min-height: 75vh;
+}
+
+  #header.alt:before{
+    -moz-transition: background-color 3s ease;
+    -webkit-transition: background-color 3s ease;
+    -ms-transition: background-color 3s ease;
+    transition: background-color 3s ease;
+    -moz-transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -ms-transition-delay: 1s;
+    transition-delay: 1s;
+  }
+
+  #header.alt h1 {
+    font-size: 4em;
+    padding: 0 0.5em 0.25em 0.5em;
+    border-bottom: solid 2px #ffffff;
+    font-weight: 200;
+    font-family: "Pacifico", cursive;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  #header.alt p {
+    text-transform: uppercase;
+    letter-spacing: 0.325rem;
+    font-weight: 400;
+    font-size: 0.8em;
+    padding: 0 1.25em;
+  }
+
+  #header.alt .inner {
+    -moz-transition: opacity 2s ease;
+    -webkit-transition: opacity 2s ease;
+    -ms-transition: opacity 2s ease;
+    transition: opacity 2s ease;
+    opacity: 1;
+  }
+
+  body.is-loading #header.alt:before {
+    background-color: black;
+  }
+
+  body.is-loading #header.alt .inner {
+    opacity: 0;
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    #header {
+      background-attachment: scroll;
+    }
+
+  }
+
+  @media screen and (max-width: 736px) {
+
+    #header {
+      padding: 4em 2em 2em 2em;
+    }
+
+      #header.alt h1 {
+        font-size: 2.5em;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      #header.alt p {
+        padding: 0;
+      }
+
+      #header.alt .inner {
+        max-width: 20em;
+      }
+
+  }

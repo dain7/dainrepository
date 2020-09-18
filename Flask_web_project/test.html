@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function info_form(){
+   str  = " name   : " + document.myform.name + "<br>" ;
+   str += " action : " + document.myform.action+ "<br>" ;
+   str += " target : " + document.myform.target + "<br>" ;
+   str += " method : " + document.myform.method + "<br>" ;
+   str += " encoding  : " + document.myform.encoding + "<br>" ;
+   str += " length  : " + document.myform.length + "<br>" ;
+   str += " 첫번째 요소 value  : " + document.myform.elements[0].value + "<br>" ;
+   str += " 첫번째 요소 name  : " + document.myform.elements[0].name + "<br>" ;
+   str += " 첫번째 form의 첫번째 요소 name  : " + document.forms[0].elements[0].name + "<br>" ;
+   str += " 첫번째 form의 첫번째 요소 value  : " + document.forms[0].elements[0].value + "<br>" ;
+   str += " 첫번째 form의 두번째 요소 name  : " + document.forms[0].elements[1].name + "<br>" ;
+   str += " 첫번째 form의 두번째 요소 value  : " + document.forms[0].elements[1].value + "<br>" ;
+   str += " 첫번째 form의 세번째 요소 name  : " + document.forms[0].elements[2].name + "<br>" ;
+   str += " 첫번째 form의 세번째 요소 value  : " + document.forms[0].elements[2].value + "<br>" ;
+   document.write(str);
+
+}
+
+function validateForm(){
+    var name = document.myform.name.value;
+    var telNO = document.myform.telNO.value;
+    var address = document.myform.address.value;
+    if(name ==""){
+        alert('이름을 입력하세요');
+        document.myform.name.focus();
+        return false;
+    }
+    if(telNO ==""){
+        alert('전화번호를 입력하세요');
+        document.myform.telNO.focus();
+        return false;
+    }
+    if(address ==""){
+        alert('주소를 입력하세요');
+        document.myform.address.focus();
+        return false;
+    }
+}
+</SCRIPT>
+</head>
+
+
+
+<body>
+<form name="myform" action="formChk.php" method="post" onsubmit="return validateForm()">
+    이름:<input type="text" name="name" id="myname" value="홍길동" size="20" />
+    전화:<input type="text" name="telNO" value="010-1234-9999" size="20" />
+    주소:<input type="text" name="address" value="" size="50" required />
+    <input type="button" value="폼정보보기" onclick="info_form()" />
+    <input type="submit" value="확인" />
+    <input type="reset" value="취소" />
+</form>
+<p id="demo"></p>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>캐릭터 만들기</title>
+<style>
+/* .picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 70%;
+  overflow: hidden;
+}
+.profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+/*
+#div1 {
+  width : 250px;
+  height: 300px;
+  padding: 20px;
+  border: 1px solid red;
+  margin: 10 10 300 10;
+} */
+
+div.fl {
+  width:500px;
+  height:500px;
+  text-align:center;
+  border:1px solid #000;
+  padding:5px 5px 20px 5px;
+  margin:20px;}
+
+h2 {
+  font-size:.8em;
+  color:#000;
+  font-weight:bold;
+}
+
+.fl {
+  float:center;
+}
+
+</style>
+
+<script>
+
+
+function drag(target, pose) {       //드래그 시작시 호출 할 함수
+    pose.dataTransfer.setData('Text', target.id);
+};
+function drop(target, pose) {       //드롭시 호출 할 함수
+    var id = pose.dataTransfer.getData('Text');
+    target.appendChild(document.getElementById(id));
+    pose.preventDefault();
+};
+
+// function allowDrop(ev) {
+//   ev.preventDefault();
+// }
+// function drag(ev) {
+//   ev.dataTransfer.setData("text", ev.target.id);
+// }
+//
+// function drop(ev){
+//   ev.preventDefault();
+//   var data=ev.dataTransfer.getData("text");
+//   ev.target.appendChild(document.getElementById(data));
+// }
+
+</script>
+</head>
+
+
+<body>
+
+
+  <div ondragover="return false;" ondragenter="return false;" class="fl" ondrop="drop(this, event);">
+      <h2>원하는 포즈를 드래그 해보세요</h2>
+      {% if filename %}
+        <div class="picture">
+          <img class="profile" src="{{ filename }}" onerror="this.src='../static/emong.jpg'" width="150px" height="150px"/>
+        </div>
+      {% endif %}
+    </div>
+
+
+
+<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  {% if filename %}
+  	<div class="picture">
+  		<img class="profile" src="{{ filename }}" onerror="this.src='../static/emong.jpg'" />
+  	</div>
+  {% endif %}
+<div> -->
+
+<div ondragover="return false;" ondragenter="return false;" ondrop="drop(this, event);" class="clothes" >
+  <img ondragstart="drag(this, event)" id="kor1" src="../static/11.jpg" draggable="true" width=250px height=300px >
+  <img ondragstart="drag(this, event)" id="kor2" src="../static/22.jpg" draggable="true" width=250px height=300px>
+  <img ondragstart="drag(this, event)" id="kor3" src="../static/3.jpg" draggable="true" width=250px height=300px>
+  <img ondragstart="drag(this, event)" id="kor4" src="../static/4.jpg" draggable="true" width=250px height=300px>
+  <img ondragstart="drag(this, event)" id="kor5" src="../static/5.jpg" draggable="true" width=250px height=300px>
+  <img ondragstart="drag(this, event)" id="kor6" src="../static/6.png" draggable="true" width=250px height=300px>
+</div>
+<!-- <img id="drag1" src="../static/1.jpg" draggable="true" ondraggable="true" ondragstart="drag(event)" width="200" height="200"> -->
+</body>
+</html>
