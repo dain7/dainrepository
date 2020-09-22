@@ -1,4 +1,8 @@
 # 플라스크를 활용한 개인 웹페이지 구현 (미완)
+
+<img width="940" alt="1" src="https://user-images.githubusercontent.com/68593065/93884206-8d9d5a00-fd1d-11ea-9aa5-7cf04a178639.PNG">
+
+
 ## 소개
 주제: 사진 포즈 및 명소를 추천해주는 웹사이트
 
