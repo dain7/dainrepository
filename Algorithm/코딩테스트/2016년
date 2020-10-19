@@ -1,0 +1,10 @@
+🎶 문제링크 (2016년)
+https://programmers.co.kr/learn/courses/30/lessons/12901
+
+🎶 내가 쓴 답
+import datetime # datetime 모듈 import
+def solution(a, b):
+    # weekday같은 경우 숫자로 반환되기 때문에 요일을 문자로 출력해줄 리스트 생성
+    t = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'] 
+    return t[datetime.date(2016, a, b).weekday()] #weekday 결과를 인덱스로 삼아 t[] 출력
+
