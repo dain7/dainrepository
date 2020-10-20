@@ -1,0 +1,12 @@
+✨문제 - 최댓값과 최솟값
+https://programmers.co.kr/learn/courses/30/lessons/12939
+
+✨내가 쓴 답
+def solution(s): 
+    # a = list(s.split(' '))
+    a = list(map(int,s.split(' '))) # s를 공백으로 나눠준 뒤 int 값으로 변경하여 list에 저장한다.
+    return str(min(a)) + ' ' + str(max(a)) # 최솟값과 최댓값을 str로 바꿔준 뒤 return
+
+✨문제점
+처음에는 아무생각 없이 s를 split하고 min을 출력했는데 str이라 안됐다.
+그래서 int로 바꿔줬다. 형식에 관해 주의깊게 생각할 것!
