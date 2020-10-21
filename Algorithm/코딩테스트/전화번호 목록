@@ -1,0 +1,34 @@
+✨ 문제 - 전화번호 목록
+https://programmers.co.kr/learn/courses/30/lessons/42577
+
+✨ 나의 답
+def solution(phone_book):
+    for i in phone_book: # 폰북에서 하나씩 출력
+        for j in range(len(phone_book)): # 0부터 시작해서
+            if i == phone_book[j]: # 같으면 pass하고 (본인)
+                continue
+            elif i == phone_book[j][:len(i)]: # j의 앞쪽이 i와 같으면
+                return False # False
+    return True # 아니면 True
+    
+✨ 어려웠던 점
+어려웠던 점은 아니고 해시방식으로 풀어야 되는데 그렇게 안풀어서 아쉬웠다.
+다음부터는 어떤 방식으로 풀어야할지 한번 더 고민해보고 풀어야겠다.
+* 해시방식: key-value로 저장하여 key를 인덱스로 사용하는 방식
+
+✨ 해시방식 풀이
+def solution(phone_book):
+    answer = True
+    hash_map = {}
+    for phone_number in phone_book:
+        hash_map[phone_number] = 1
+    for phone_number in phone_book:
+        temp = ""
+        for number in phone_number:
+            temp += number
+            if temp in hash_map and temp != phone_number:
+                answer = False
+    return answer
+    
+ ✨ 티스토리
+ https://cowimming.tistory.com/58
