@@ -1,0 +1,23 @@
+✨ 프로그래머스 문제 [JadenCase 문자열 만들기]
+문제설명: programmers.co.kr/learn/courses/30/lessons/12951
+
+✨ 나의 풀이
+def solution(s):
+    a = s.split(' ') #a를 공백으로 나누어줌
+    answer = '' #답안
+    
+    for i in a: #a에서 하나씩 꺼낸후
+        answer += i.capitalize() + ' ' #첫번째를 대문자 만들고 + 공백 삽입
+
+    return answer[:-1] # 마지막 공백은 빼고 제출
+
+✨ 다른 사람 풀이
+def Jaden_Case(s):
+    # 함수를 완성하세요
+    return s.title()
+
+✨ 어려웠던 점 
+capitalize를 알고 있었기 때문에 어려웠던 점은 없었다. title 함수를 새로 배울 수 있는 기회였다!
+
+✨ 티스토리 포스팅
+https://cowimming.tistory.com/57
