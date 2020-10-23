@@ -1,7 +1,7 @@
 # Django Project
 
 20.10.22
-- 웹 프로그래밍 공부
+- 웹 프로그래밍 공부 (https://cowimming.tistory.com/59
 - Django 설치 --> but Django와 원래 쓰던 Oracle의 버전이 맞지 않아 삭제
 
 20.10.23
