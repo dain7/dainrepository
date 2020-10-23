@@ -9,6 +9,6 @@
 - 장고 디렉토리 생성
 - 데이터베이스 지정(oracle 연결)
 - models.py 정의 (테이블 2개 생성) --> admin.py 수정
-* django 2버전 이상부터는 foreign key 조건에 on_delete문을 추가해줘야함.
-* models.ForeignKey('Question', on_delete=models.CASCADE,)
+django 2버전 이상부터는 foreign key 조건에 on_delete문을 추가해줘야함.
+models.ForeignKey('Question', on_delete=models.CASCADE,)
   
