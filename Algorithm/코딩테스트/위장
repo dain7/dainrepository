@@ -1,0 +1,29 @@
+✨ 문제 [위장]
+✌ points - 해시를 이용해서 풀 것!
+https://programmers.co.kr/learn/courses/30/lessons/42578
+
+✨ 내가 제출한 답
+def solution(clothes):
+    hash_table = {} #저장할 hash_table 생성
+    
+    for (v , k) in clothes: # clothes에서 쌍을 꺼내
+        if k in hash_table: # 카테고리를 key로 삼아 저장
+            hash_table[k] += 1
+        else:
+            hash_table[k] = 1
+    # 위의 식을 수행하고 나면 각 카테고리별 옷의 갯수가 저장된다
+    # 경우의 수를 활용한다
+    answer = 1
+    for i in hash_table.values():
+    	# 각 카테고리의 옷의 갯수를 answer에 곱하되 해당 카테고리를 착용하지 않는다는 조건이 
+        # 필요하기 때문에 1을 더해준다.
+        answer *= (i + 1)
+    
+    return answer-1 # 아무 옷도 안입는다는 조건을 넣기 위해 1을 뺀다
+    
+✨ 어려웠던 점
+모든 경우의 수 계산.. 이것때문에 순열 조합 다시 봤다.. 진짜 수학공부의 필요성을 절실히 느끼는 중.
+코테 어느 정도 정리되면 수학 공부부터 다시 해야겠다 😭
+
+✨ 티스토리
+https://cowimming.tistory.com/61
