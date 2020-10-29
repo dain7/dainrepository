@@ -1,0 +1,13 @@
+✨문제
+programmers.co.kr/learn/courses/30/lessons/12911
+
+✨나의 풀이
+def solution(s):
+    n = 1000000
+    b = bin(s).count('1')
+    for i in range(s+1, n):
+        if b == bin(i).count('1'):
+            return i
+            
+✨어려웠던 점
+딱히 없었다!
