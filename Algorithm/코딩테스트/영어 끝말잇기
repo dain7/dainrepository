@@ -1,0 +1,38 @@
+📌 문제 [영어 끝말잇기]
+
+programmers.co.kr/learn/courses/30/lessons/12981
+
+📌 내 풀이
+
+def solution(n, words):
+   
+    aleady = [] # 이미 말했던 단어
+    player = 0 # 플레이어 번호
+    count = 1 # 게임 라운드
+    lastword = '' # 그전 단어
+    
+    for i in range(len(words)):
+        player += 1 # 1번부터 시작
+        
+        if i == 0: # i=0이면 lastword가 없으므로 더해주고 continue 
+            lastword = words[i]
+            aleady.append(words[i])
+            continue
+        
+        if words[i][0] != lastword[-1]: # 지금 첫단어랑 마지막단어랑 다르면 
+            return player, count # return 
+        elif words[i][0] == lastword[-1]: # 같으면
+            if words[i] in aleady: # 근데 이미 말한 단어면
+                return player, count # return 
+            else: # 아니면 
+                aleady.append(words[i]) 
+                lastword = words[i]
+                
+		#  플레이어 리셋 및 라운드 +1 
+        if i%n == n-1:
+            player = 0 
+            count += 1
+            continue
+
+    return [0,0] # 아무 이상 없으면 return 
+
